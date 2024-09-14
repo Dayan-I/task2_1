@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.vagapov.spring.task_2_1.config.AppConfig;
+import ru.vagapov.spring.task_2_1.model.Cat;
 import ru.vagapov.spring.task_2_1.model.HelloSpring;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -25,9 +26,9 @@ public class SpringApplicationOneTests {
                 applicationContext.getBean(HelloSpring.class);
         Assert.assertSame("Тест провален, некорректная настройка бина HelloSpring", tree, leaf);
 
-//        Cat one = applicationContext.getBean(Cat.class);
-//        Cat two = applicationContext.getBean(Cat.class);
-//        Assert.assertNotSame("Тест провален, некорректная настройка бина Cat", one, two);
+        Cat one = applicationContext.getBean(Cat.class);
+        Cat two = applicationContext.getBean(Cat.class);
+       Assert.assertNotSame("Тест провален, некорректная настройка бина Cat", one, two);
     }
 
 }
